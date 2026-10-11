@@ -58,20 +58,121 @@ section h3 {
 }
 
 .activity-card {
+  position: relative;
   margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  padding: 18px;
+  border: 1px solid #e1e7f0;
+  border-left: 4px solid #3949ab;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff 0%, #f7f9ff 100%);
+  box-shadow: 0 3px 10px rgba(26, 35, 126, 0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 35, 126, 0.12);
 }
 
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
+  font-size: 1.1rem;
 }
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.participants-section {
+  margin-top: 16px;
+  padding: 13px 15px;
+  border: 1px solid #e3e8f5;
+  border-radius: 8px;
+  background-color: #f0f3fb;
+}
+
+.participants-section h5 {
+  margin-bottom: 9px;
+  color: #283593;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.participants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #374151;
+  font-size: 0.92rem;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  padding: 7px 9px;
+  border: 1px solid #e1e7f0;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.participant span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.delete-participant {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7280;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.delete-participant:hover:not(:disabled) {
+  border-color: #fecaca;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.delete-participant:focus-visible {
+  outline: 2px solid #3949ab;
+  outline-offset: 2px;
+}
+
+.delete-participant:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.delete-participant svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.no-participants {
+  margin: 0;
+  color: #687386;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 .form-group {
